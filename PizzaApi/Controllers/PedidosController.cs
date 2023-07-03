@@ -63,14 +63,37 @@ namespace PizzaApi.Controllers
         }
 
         [HttpPost("pedido")]
-        public IActionResult RealizarPedido([FromBody] PizzaOrder order)
+        public IActionResult RealizarPedido([FromBody] List<PizzaOrder> orders)
         {
-            CookPizza prebuiltPizza = _pizzaFactory.CreatePizza(order.PizzaName, order.CustomIngredients, order.Size);
-            
-            var strategy = _promocionContext.GetPromotionStrategy(DateTime.Now);
-            var costoFinal = strategy.ApplyPromotion(prebuiltPizza.GetCost(), 15, 5);
+            List<CookPizza> prebuiltPizzas = new();
 
-            return Ok("Pedido recibido:"+ prebuiltPizza.GetDescription() + ", " + $"Cost: ${prebuiltPizza.GetCost()}" + ", "+ $"CostF: ${costoFinal}");
+            foreach (var order in orders)
+            {
+                CookPizza prebuiltPizza = _pizzaFactory.CreatePizza(order.PizzaName, order.CustomIngredients, order.Size);
+                prebuiltPizzas.Add(prebuiltPizza);
+            }
+
+            var strategy = _promocionContext.GetPromotionStrategy(DateTime.Now);
+
+            double costoTotal = 0;
+            foreach (var pizza in prebuiltPizzas)
+            {
+                costoTotal += pizza.GetCost();
+            }
+
+            var costoDelivery = 15;
+            var costoFinal = strategy.ApplyPromotion(costoTotal, costoDelivery, orders.Count);
+            var orderDescriptions = prebuiltPizzas.Select(pizza => pizza.GetDescription());
+            var orderCosts = prebuiltPizzas.Select(pizza => pizza.GetCost());
+
+            var response = new
+            {
+                Orders = orderDescriptions,
+                TotalCost = costoTotal,
+                FinalCost = costoFinal
+            };
+
+            return Ok(response);
         }
     }
 }
