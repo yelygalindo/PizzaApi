@@ -6,17 +6,24 @@
   Se puede usar el metodo: GET /sizes para obtener los tamaños disponibles de las pizzas, la ruta sería: api/Pedidos/api/sizes.
 	
   Se puede usar el metodo: Post /pedido para ingresar una orden de pizza, la ruta sería: api/Pedidos/pedido. Recibe como body: 
-  
-  {
-  "pizzaName": "Personalize Pizza",
-  "size": "Medium",
-  "customIngredients": ["Pepperoni","Olives"]
-  }
-    
-    Otro ejemplo de uso sería:
-    
-   {
-    "pizzaName": "Margherita Pizza",
-    "size": "Familiar",
-     "customIngredients": []
-   }
+	 [
+	  {
+	    "PizzaName": "Personalize Pizza",
+	    "Size": "Familiar",
+	    "CustomIngredients": ["Pepperoni","Olives"]
+	  },
+   	{
+	    "PizzaName": "Margherita Pizza",
+	    "Size": "Familiar",
+	    "CustomIngredients": []
+	  }
+	]
+Respuesta
+La respuesta de la API será un objeto JSON con la siguiente estructura:
+{
+  "Orders": ["string"],
+  "TotalCost": decimal,
+  "FinalCost": decimal
+}
+
+Siendo el costo Final con el delivery incluido, en este caso el costo del delivery es de 15$ por que no era parte de la tarea el calculo según kilometraje.
