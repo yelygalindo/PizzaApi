@@ -6,6 +6,7 @@
   Se puede usar el metodo: GET /sizes para obtener los tamaños disponibles de las pizzas, la ruta sería: api/Pedidos/api/sizes.
 	
   Se puede usar el metodo: Post /pedido para ingresar una orden de pizza, la ruta sería: api/Pedidos/pedido. Recibe como body: 
+  
   {
   "pizzaName": "Personalize Pizza",
   "size": "Medium",
@@ -13,6 +14,7 @@
   }
     
     Otro ejemplo de uso sería:
+    
    {
     "pizzaName": "Margherita Pizza",
     "size": "Familiar",
