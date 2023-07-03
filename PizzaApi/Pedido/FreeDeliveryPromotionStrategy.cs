@@ -1,4 +1,6 @@
-﻿namespace Pizzas.Pedido
+﻿using PizzaApi.Pedido.Interfaces;
+
+namespace Pizzas.Pedido
 {
     public class FreeDeliveryPromotionStrategy : IPromotionStrategy
     {

@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PizzaApi.Pizza;
-using Pizzas.Domain;
-using Pizzas.Pedido;
-using Pizzas.Pizza.Builder;
-using Pizzas.Pizza.Interfaces;
+using PizzaApi.Controllers.Request;
+using PizzaApi.Pedido.Interfaces;
+using PizzaApi.Pizza.Builder;
+using PizzaApi.Pizza.Factory;
 
 namespace PizzaApi.Controllers
 {
@@ -34,6 +33,20 @@ namespace PizzaApi.Controllers
                 "Olives"
             };
             return Ok(availableToppings);
+        }
+
+        [HttpGet]
+        [Route("api/sizes")]
+        public IActionResult GetAvailableSizes()
+        {
+            List<string> availableSizes = new()
+            {
+                "Personal",
+                "Small",
+                "Medium",
+                "Familiar"
+            };
+            return Ok(availableSizes);
         }
 
         [HttpGet]

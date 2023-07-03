@@ -2,9 +2,9 @@
 using Pizzas.Pizza.Interfaces;
 using System.Xml.Linq;
 
-namespace Pizzas.Domain
+namespace PizzaApi.Pizza.Recipes
 {
-    public class MargharitaPizza: IRecipe
+    public class MargharitaPizza : IRecipe
     {
         public string GetDescription()
         {

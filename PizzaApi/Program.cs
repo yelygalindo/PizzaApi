@@ -1,4 +1,6 @@
-using Pizzas.Domain;
+using PizzaApi.Pedido.Interfaces;
+using PizzaApi.Pizza.Factory;
+using PizzaApi.Pizza.Recipes;
 using Pizzas.Pedido;
 using Pizzas.Pizza.Interfaces;
 

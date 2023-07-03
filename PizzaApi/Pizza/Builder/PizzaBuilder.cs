@@ -1,5 +1,4 @@
-﻿using PizzaApi.Pizza;
-using Pizzas.Pizza.Interfaces;
+﻿using PizzaApi.Pizza.Builder;
 
 namespace Pizzas.Pizza.Builder
 {

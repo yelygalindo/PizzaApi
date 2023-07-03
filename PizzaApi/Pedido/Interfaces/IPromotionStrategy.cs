@@ -1,4 +1,4 @@
-﻿namespace Pizzas.Pedido
+﻿namespace PizzaApi.Pedido.Interfaces
 {
     public interface IPromotionStrategy
     {

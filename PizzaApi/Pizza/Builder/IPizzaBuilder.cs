@@ -1,6 +1,4 @@
-﻿using PizzaApi.Pizza;
-
-namespace Pizzas.Pizza.Interfaces
+﻿namespace PizzaApi.Pizza.Builder
 {
     public interface IPizzaBuilder
     {

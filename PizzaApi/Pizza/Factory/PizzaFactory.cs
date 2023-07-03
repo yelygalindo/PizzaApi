@@ -1,8 +1,9 @@
-﻿using PizzaApi.Pizza;
+﻿using PizzaApi.Pizza.Builder;
+using PizzaApi.Pizza.Recipes;
 using Pizzas.Pizza.Builder;
 using Pizzas.Pizza.Interfaces;
 
-namespace Pizzas.Domain
+namespace PizzaApi.Pizza.Factory
 {
     public class PizzaFactory : IPizzaFactory
     {

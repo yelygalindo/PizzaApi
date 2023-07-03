@@ -1,6 +1,6 @@
 ﻿using Pizzas.Pizza.Interfaces;
 
-namespace Pizzas.Domain
+namespace PizzaApi.Pizza.Recipes
 {
     public class PepperoniPizza : IRecipe
     {

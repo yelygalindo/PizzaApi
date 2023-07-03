@@ -1,4 +1,4 @@
-﻿namespace PizzaApi.Pizza
+﻿namespace PizzaApi.Pizza.Builder
 {
     public class CookPizza
     {
